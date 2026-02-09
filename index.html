@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valentine’s Day Plan — Gaurika 💛</title>
+
+  <style>
+    :root{
+      --gold:#d4af37;
+      --goldSoft: rgba(212,175,55,.45);
+      --text:#f6f6f6;
+      --muted: rgba(246,246,246,.78);
+      --card: rgba(10,10,10,.62);
+      --cardStrong: rgba(10,10,10,.78);
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --border: 1px solid rgba(212,175,55,.35);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    /* FULL-PAGE PHOTO BACKGROUND */
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      color:var(--text);
+      background: url("bg.jpg") center/cover no-repeat fixed;
+      position:relative;
+    }
+
+    /* Dark overlay for readability */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.70), rgba(0,0,0,.55));
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .wrap{ position:relative; z-index:1; padding:28px 18px 36px; }
+
+    .container{
+      width:min(920px, 100%);
+      margin:0 auto;
+    }
+
+    .hero{
+      border-radius: var(--radius);
+      background: var(--card);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+
+    .heroInner{
+      padding: 26px 22px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .kicker{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom: 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background: rgba(212,175,55,.12);
+      border: 1px solid rgba(212,175,55,.22);
+      color: var(--gold);
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.02em;
+      white-space:nowrap;
+    }
+
+    h1{
+      margin: 0;
+      font-size: clamp(28px, 3.2vw, 44px);
+      letter-spacing: -.02em;
+      line-height:1.1;
+    }
+
+    .sub{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height:1.5;
+      max-width: 70ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      padding: 18px 22px 22px;
+    }
+    @media (min-width:820px){
+      .grid{ grid-template-columns: 1.15fr .85fr; align-items:start; }
+    }
+
+    .section{
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 14px;
+    }
+
+    .sectionTitle{
+      margin: 2px 0 12px;
+      font-weight:900;
+      letter-spacing:.02em;
+      color: var(--gold);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .item{
+      display:flex;
+      gap:12px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
+      margin-bottom: 12px;
+    }
+    .item:last-child{ margin-bottom:0; }
+
+    .time{
+      width:92px;
+      flex:0 0 auto;
+      padding:10px;
+      border-radius: 14px;
+      text-align:center;
+      font-weight:900;
+      letter-spacing:.03em;
+      color: #101010;
+      background: linear-gradient(135deg, rgba(212,175,55,.95), rgba(212,175,55,.65));
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+    }
+
+    .itTitle{
+      margin:0;
+      font-weight:900;
+      font-size:16px;
+      line-height:1.2;
+    }
+
+    .itMeta{
+      margin:6px 0 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height:1.45;
+    }
+
+    .note{
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(212,175,55,.10);
+      border: 1px solid rgba(212,175,55,.18);
+      color: rgba(246,246,246,.92);
+      font-size: 13.5px;
+      line-height:1.45;
+      font-style: italic;
+    }
+
+    .mini{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height:1.5;
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin: 14px 0;
+    }
+
+    .spotify{
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+
+    .btnRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin-top: 14px;
+    }
+
+    button{
+      appearance:none;
+      border:0;
+      cursor:pointer;
+      border-radius:999px;
+      padding: 12px 16px;
+      font-weight:900;
+      letter-spacing:.02em;
+      font-size: 14px;
+    }
+
+    .primary{
+      color:#101010;
+      background: linear-gradient(135deg, rgba(212,175,55,.95), rgba(212,175,55,.70));
+      box-shadow: 0 16px 36px rgba(0,0,0,.45);
+    }
+
+    .hint{
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height:1.4;
+    }
+
+    /* RSVP MODE: hide everything except overlay */
+    body.rsvp-mode::before{
+      background: rgba(0,0,0,.72);
+    }
+    body.rsvp-mode .wrap{
+      display:none;
+    }
+
+    .overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      padding:24px;
+      align-items:center;
+      justify-content:center;
+      z-index: 2;
+    }
+    body.rsvp-mode .overlay{
+      display:flex;
+    }
+
+    .overlayCard{
+      width:min(760px, 100%);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      background: var(--cardStrong);
+      border: 1px solid var(--goldSoft);
+      box-shadow: var(--shadow);
+      text-align:center;
+      backdrop-filter: blur(10px);
+    }
+
+    .overlayCard h2{
+      margin:0 0 10px;
+      color: var(--gold);
+      letter-spacing:.02em;
+      font-size: 22px;
+    }
+
+    .overlayText{
+      margin:0;
+      color: rgba(246,246,246,.95);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .overlayText span{
+      display:block;
+      margin-top: 12px;
+      font-size: 24px;
+      font-weight: 1000;
+      color: var(--gold);
+    }
+
+    .ghostBtn{
+      margin-top: 18px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 900;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid rgba(212,175,55,.55);
+      cursor: pointer;
+    }
+
+    .footerSig{
+      margin-top: 14px;
+      color: rgba(246,246,246,.70);
+      font-size: 12.5px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <div class="hero">
+        <div class="heroInner">
+          <div class="kicker">
+            <div class="pill">Toronto ✨ Elegant & Romantic</div>
+            <div class="pill">Valentine’s Day — Date confirmed 💛</div>
+          </div>
+          <h1>Our Valentine’s Day Plan, Gaurika</h1>
+          <p class="sub">
+            A little schedule for a big feeling. No stress — just us, good vibes, and a night we’ll remember.
+          </p>
+        </div>
+
+        <div class="grid">
+          <!-- LEFT: Schedule -->
+          <div class="section">
+            <div class="sectionTitle">Schedule</div>
+
+            <div class="item">
+              <div class="time">4:00 PM</div>
+              <div>
+                <p class="itTitle">Comedy Show</p>
+                <p class="itMeta">
+                  Meridian Hall — 1 Front Street East, Toronto, ON M5E 1B2
+                </p>
+                <div class="note">Let’s lighten up with some dark humor.</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="time">7:00 PM</div>
+              <div>
+                <p class="itTitle">Cocktail Hour</p>
+                <p class="itMeta">
+                  Surprise spot (I’m ready to be surprised with your choice of place)
+                </p>
+                <div class="note">
+                  Let’s loosen up a bit and calm our nerves like we did on our third date.
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="time">9:00 PM</div>
+              <div>
+                <p class="itTitle">Dinner at Ngogo</p>
+                <p class="itMeta">
+                  646 Queen St W, Toronto, ON M6J 1E4
+                </p>
+                <div class="note">
+                  I’ve heard French kiss is amazing — let’s see if French food is too.
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sectionTitle">Dress Code</div>
+            <p class="mini">
+              Comfortable enough that you don’t want shiver outside and feel cold inside 😅
+            </p>
+
+            <div class="btnRow">
+              <button class="primary" id="rsvpBtn" type="button">Click here for RSVP 💛</button>
+              <div class="hint">P.S. Clicking RSVP reveals your “confirmation.”</div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Spotify -->
+          <div class="section">
+            <div class="sectionTitle">Soundtrack</div>
+            <p class="mini">Press play and let the night start early.</p>
+            <div class="divider"></div>
+
+            <div class="spotify">
+              <!-- Spotify Embed: track id 3ExgWVPWOQts9RVBkqpdic -->
+              <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/3ExgWVPWOQts9RVBkqpdic?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="divider"></div>
+            <p class="mini"><b>From:</b> Your fiancé 💛</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footerSig">Made with love. Don’t overthink it — just show up and be you.</div>
+    </div>
+  </div>
+
+  <!-- RSVP TAKEOVER OVERLAY -->
+  <section id="rsvpOverlay" class="overlay" aria-hidden="true">
+    <div class="overlayCard">
+      <h2>RSVP Confirmed 💛</h2>
+      <p class="overlayText">
+        Go and kiss your fiancée and say:
+        <span>“Looking forward to it”</span>
+      </p>
+      <button id="backBtn" class="ghostBtn" type="button">Back</button>
+    </div>
+  </section>
+
+  <script>
+    const rsvpBtn = document.getElementById("rsvpBtn");
+    const backBtn = document.getElementById("backBtn");
+    const overlay = document.getElementById("rsvpOverlay");
+
+    rsvpBtn.addEventListener("click", () => {
+      document.body.classList.add("rsvp-mode");
+      overlay.setAttribute("aria-hidden", "false");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    backBtn.addEventListener("click", () => {
+      document.body.classList.remove("rsvp-mode");
+      overlay.setAttribute("aria-hidden", "true");
+    });
+  </script>
+</body>
+</html>
