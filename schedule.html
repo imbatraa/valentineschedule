@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valentine’s Schedule</title>
+  <link rel="stylesheet" href="common.css">
+  <link id="theme-style" rel="stylesheet">
+</head>
+
+<body class="bg">
+
+<div class="overlay card">
+  <h1>Valentine’s Day Schedule</h1>
+  <h2>Are you excited?? 😍</h2>
+
+  <div class="event">
+    <strong>4:00 PM – Comedy Show @ Meridian Hall</strong>
+    <p>1 Front Street East, Toronto</p>
+    <em>Let’s light-en up with some dark humor 😌</em>
+  </div>
+
+  <div class="event">
+    <strong>7:00 PM – Cocktail Hour</strong>
+    <p>I’m ready to be surprised with your choice of place 🍸</p>
+    <em>Let’s loosen up like we did on our third date 😉</em>
+  </div>
+
+  <div class="event">
+    <strong>9:00 PM – Dinner @ Ngogo</strong>
+    <p>646 Queen St W, Toronto</p>
+    <em>I’ve heard French food is amazing — let’s see 😘</em>
+  </div>
+
+  <div class="dress">
+    <strong>Dress code</strong><br>
+    Comfortable enough that you don’t shiver outdoors and don’t feel cold indoors 😅<br>
+    Maybe a classy dress with a jacket would work 😉
+  </div>
+
+  <button class="btn rsvp" onclick="goRsvp()">RSVP 💌</button>
+</div>
+
+<audio id="music" src="song.mp3" loop></audio>
+<div class="music-btn" onclick="toggleMusic()">⏸️</div>
+
+<script>
+const theme = localStorage.getItem("theme") || "aesthetic";
+document.getElementById("theme-style").href =
+  theme === "classy" ? "classy.css" : "aesthetic.css";
+
+document.getElementById("music").play();
+
+function goRsvp(){
+  window.location.href="rsvp.html";
+}
+function toggleMusic(){
+  const m=document.getElementById("music");
+  m.paused?m.play():m.pause();
+}
+</script>
+
+</body>
+</html>
