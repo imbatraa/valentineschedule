@@ -1,0 +1,6 @@
+.overlay { background: rgba(255,255,255,0.8); color:#222; }
+h1, h2 { color:#333; }
+.btn {
+  background:#eee;
+  color:#222;
+}
