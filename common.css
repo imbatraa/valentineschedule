@@ -1,55 +1,67 @@
 body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  height: 100vh;
+margin:0;
+font-family: 'Georgia', serif;
+text-align:center;
 }
 
-.bg {
-  background: url('IMG_0094.jpeg') center/cover no-repeat fixed;
+.bg{
+background:url('IMG_0094.jpeg') center/cover no-repeat fixed;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.55);
-  color: white;
-  padding: 2rem;
-  min-height: 100vh;
+.overlay{
+background:rgba(0,0,0,0.6);
+min-height:100vh;
+padding:2rem;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+h1{font-size:2rem;margin-bottom:0.5rem;}
+h2{font-size:1.2rem;margin-bottom:2rem;}
+
+.schedule-card{
+width:90%;
+max-width:500px;
+padding:1rem;
+margin:1rem 0;
+border-radius:12px;
+border:2px solid rgba(255,255,255,0.4);
+background:rgba(0,0,0,0.4);
 }
 
-.card {
-  max-width: 700px;
-  margin: auto;
+.schedule-card h3{margin:0.5rem 0;}
+
+.dress-code{
+margin-top:2rem;
+width:90%;
+max-width:500px;
 }
 
-.btn-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
+.btn-group{
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:2rem;
 }
 
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
+.btn{
+padding:0.8rem 1.5rem;
+border-radius:8px;
+border:none;
+cursor:pointer;
+font-size:1rem;
 }
 
-.music-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: gold;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:gold;
+color:black;
+padding:12px;
+border-radius:50%;
+cursor:pointer;
 }
-.event { margin: 1.5rem 0; }
-.dress { margin-top: 2rem; font-size: 0.95rem; }
