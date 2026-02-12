@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Valentine’s Schedule</title>
-  <link rel="stylesheet" href="common.css">
-  <link id="theme-style" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Valentine’s Day Schedule</title>
+<link rel="stylesheet" href="common.css">
+<link id="theme-style" rel="stylesheet">
 </head>
 
 <body class="bg">
 
-<div class="overlay card">
-  <h1>Valentine’s Day Schedule</h1>
-  <h2>Are you excited?? 😍</h2>
+<div class="overlay center">
 
-  <div class="event">
-    <strong>4:00 PM – Comedy Show @ Meridian Hall</strong>
-    <p>1 Front Street East, Toronto</p>
-    <em>Let’s light-en up with some dark humor 😌</em>
-  </div>
+<h1>Valentine’s Day Schedule</h1>
+<h2>Are you excited?? 😍</h2>
 
-  <div class="event">
-    <strong>7:00 PM – Cocktail Hour</strong>
-    <p>I’m ready to be surprised with your choice of place 🍸</p>
-    <em>Let’s loosen up like we did on our third date 😉</em>
-  </div>
-
-  <div class="event">
-    <strong>9:00 PM – Dinner @ Ngogo</strong>
-    <p>646 Queen St W, Toronto</p>
-    <em>I’ve heard French food is amazing — let’s see 😘</em>
-  </div>
-
-  <div class="dress">
-    <strong>Dress code</strong><br>
-    Comfortable enough that you don’t shiver outdoors and don’t feel cold indoors 😅<br>
-    Maybe a classy dress with a jacket would work 😉
-  </div>
-
-  <button class="btn rsvp" onclick="goRsvp()">RSVP 💌</button>
+<div class="schedule-card">
+<h3>12PM – Brunch @ TBD</h3>
+<p>Spot to be updated once finalized</p>
 </div>
 
-<audio id="music" src="song.mp3" loop></audio>
-<div class="music-btn" onclick="toggleMusic()">⏸️</div>
+<div class="schedule-card">
+<h3>4PM – Comedy Show @ Meridian Hall</h3>
+<p>1 Front Street East, Toronto</p>
+<em>Let’s light-en up with some dark humor 😌</em>
+</div>
+
+<div class="schedule-card">
+<h3>7PM – Drinks and Dinner @ Home</h3>
+<p>10 York St.</p>
+<em>
+Let’s make a cocktail for each other and then either cook dinner,  
+or if we get too tired (IYKYK 😉) we’ll order a pizza 😅
+</em>
+</div>
+
+<div class="dress-code">
+<strong>Dress Code:</strong><br>
+Comfortable enough that you don’t shiver outdoors and don’t feel cold indoors 😅<br>
+Maybe a classy dress with a jacket would work 😉<br>
+At home, you already know 😉😅
+</div>
+
+<div class="btn-group">
+<button class="btn rsvp" onclick="goRsvp()">RSVP 💌</button>
+<button class="btn back" onclick="goBack()">Back</button>
+</div>
+
+</div>
+
+<audio id="bg-music" src="song.mp3" loop></audio>
+<div class="music-btn" onclick="toggleMusic()">🎵</div>
 
 <script>
-const theme = localStorage.getItem("theme") || "aesthetic";
-document.getElementById("theme-style").href =
-  theme === "classy" ? "classy.css" : "aesthetic.css";
+const theme=localStorage.getItem("theme")||"aesthetic";
+document.getElementById("theme-style").href=
+  theme==="classy"?"classy.css":"aesthetic.css";
 
-document.getElementById("music").play();
+window.onload=function(){
+  const music=document.getElementById("bg-music");
+  if(sessionStorage.getItem("musicPlaying")==="true"){
+    music.play();
+  }
+}
+
+function toggleMusic(){
+  const music=document.getElementById("bg-music");
+  if(music.paused){
+    music.play();
+    sessionStorage.setItem("musicPlaying","true");
+  }else{
+    music.pause();
+    sessionStorage.setItem("musicPlaying","false");
+  }
+}
 
 function goRsvp(){
   window.location.href="rsvp.html";
 }
-function toggleMusic(){
-  const m=document.getElementById("music");
-  m.paused?m.play():m.pause();
+function goBack(){
+  window.location.href="index.html";
 }
 </script>
 
