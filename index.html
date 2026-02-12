@@ -42,7 +42,7 @@ body {
     display: none;
     min-height: 100vh;
     width: 100%;
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
     animation: fadeIn 0.8s ease;
 }
@@ -57,13 +57,13 @@ body {
 /* Typography */
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-bottom: 20px;
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
     opacity: 0.9;
 }
 
@@ -76,7 +76,6 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s ease;
-    margin: 10px;
     border-radius: 4px;
 }
 
@@ -88,17 +87,32 @@ button:hover {
 /* Schedule */
 .schedule {
     max-width: 750px;
-    text-align: left;
+    text-align: center;
     margin: 20px auto;
 }
 
 .schedule-item {
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 .time {
     font-weight: bold;
     color: #d4af37;
+    margin-bottom: 5px;
+}
+
+/* Button Row (Page 2) */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    max-width: 90%;
+    margin-top: 30px;
+}
+
+/* Third Page Back Button */
+.bottom-center {
+    margin-top: 40px;
 }
 
 /* Music Icon */
@@ -138,23 +152,20 @@ button:hover {
     to {opacity: 1;}
 }
 
-/* MOBILE OPTIMIZATION */
+/* MOBILE */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
 
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .schedule {
-        font-size: 0.95rem;
+    .button-row {
+        width: 100%;
+        justify-content: space-around;
     }
 
     button {
-        width: 85%;
-        max-width: 300px;
+        width: 45%;
+        font-size: 0.9rem;
     }
 }
 </style>
@@ -184,7 +195,7 @@ button:hover {
     <div class="schedule">
         <div class="schedule-item">
             <p class="time">🥞 12PM: Brunch @ TBD</p>
-            <p>Or as I say it — “Dekhte hain kahan jayenge?” 😏</p>
+            <p>Kahan jayenge?? - As I say it — “Dekhte hain” 😏</p>
         </div>
 
         <div class="schedule-item">
@@ -194,7 +205,7 @@ button:hover {
 
         <div class="schedule-item">
             <p class="time">🍸 7PM: Cocktails @ Home</p>
-            <p>Let’s make each other a cocktail. 🖤</p>
+            <p>Let’s make each other a cocktail. <span style="color:#d4af37;">💛</span></p>
         </div>
 
         <div class="schedule-item">
@@ -208,18 +219,25 @@ button:hover {
         </div>
     </div>
 
-    <button onclick="goToPage(3)">RSVP 💌</button>
-    <button onclick="goToPage(1)">Back ⬅️</button>
+    <div class="button-row">
+        <button onclick="goToPage(3)">RSVP 💌</button>
+        <button onclick="goToPage(1)">Back ⬅️</button>
+    </div>
 </section>
 
 <!-- PAGE 3 -->
 <section id="page3" class="page">
     <h1>🎉 Yayyyyy! You RSVP’d YESSSSSS! 💛</h1>
     <p class="subtitle">As if you had any other choice. 😌</p>
+
     <p style="margin-top:30px; max-width:600px;">
         To confirm your booking, please go kiss your fiancé 💋  
         and say <strong>“Looking forward to it.”</strong>
     </p>
+
+    <div class="bottom-center">
+        <button onclick="goToPage(2)">Back ⬅️</button>
+    </div>
 </section>
 
 <script>
